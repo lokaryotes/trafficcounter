@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .counter-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .counter {
+            flex: 1 1 300px;
+            margin: 20px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Traffic Counter</h1>
+
+<div class="counter-container">
+
+    <!-- For Rustia Out -->
+    <div class="counter">
+        <h2>For Rustia Out</h2>
+        <p>Cars: <span id="carsRustiaOutCount">0</span></p>
+        <p>Taxis: <span id="taxisRustiaOutCount">0</span></p>
+        <p>Motorcycles: <span id="motorcyclesRustiaOutCount">0</span></p>
+        <p>Tricycles: <span id="tricyclesRustiaOutCount">0</span></p>
+        <p>UV: <span id="uvRustiaOutCount">0</span></p>
+        <p>Buses: <span id="busesRustiaOutCount">0</span></p>
+        <p>Light Trucks: <span id="lightTrucksRustiaOutCount">0</span></p>
+        <p>Heavy Trucks: <span id="heavyTrucksRustiaOutCount">0</span></p>
+        <button onclick="incrementCount('carsRustiaOutCount')">Add Car</button>
+        <button onclick="incrementCount('taxisRustiaOutCount')">Add Taxi</button>
+        <button onclick="incrementCount('motorcyclesRustiaOutCount')">Add Motorcycle</button>
+        <button onclick="incrementCount('tricyclesRustiaOutCount')">Add Tricycle</button>
+        <button onclick="incrementCount('uvRustiaOutCount')">Add UV</button>
+        <button onclick="incrementCount('busesRustiaOutCount')">Add Bus</button>
+        <button onclick="incrementCount('lightTrucksRustiaOutCount')">Add Light Truck</button>
+        <button onclick="incrementCount('heavyTrucksRustiaOutCount')">Add Heavy Truck</button>
+    </div>
+
+    <!-- Bridge to Glorietta 1 -->
+    <div class="counter">
+        <h2>Bridge to Glorietta 1</h2>
+        <p>Cars: <span id="carsGlorietta1Count">0</span></p>
+        <p>Taxis: <span id="taxisGlorietta1Count">0</span></p>
+        <p>Motorcycles: <span id="motorcyclesGlorietta1Count">0</span></p>
+        <p>Tricycles: <span id="tricyclesGlorietta1Count">0</span></p>
+        <p>UV: <span id="uvGlorietta1Count">0</span></p>
+        <p>Buses: <span id="busesGlorietta1Count">0</span></p>
+        <p>Light Trucks: <span id="lightTrucksGlorietta1Count">0</span></p>
+        <p>Heavy Trucks: <span id="heavyTrucksGlorietta1Count">0</span></p>
+        <button onclick="incrementCount('carsGlorietta1Count')">Add Car</button>
+        <button onclick="incrementCount('taxisGlorietta1Count')">Add Taxi</button>
+        <button onclick="incrementCount('motorcyclesGlorietta1Count')">Add Motorcycle</button>
+        <button onclick="incrementCount('tricyclesGlorietta1Count')">Add Tricycle</button>
+        <button onclick="incrementCount('uvGlorietta1Count')">Add UV</button>
+        <button onclick="incrementCount('busesGlorietta1Count')">Add Bus</button>
+        <button onclick="incrementCount('lightTrucksGlorietta1Count')">Add Light Truck</button>
+        <button onclick="incrementCount('heavyTrucksGlorietta1Count')">Add Heavy Truck</button>
+    </div>
+
+    <!-- Bridge to Glorietta 2 -->
+    <div class="counter">
+        <h2>Bridge to Glorietta 2</h2>
+        <p>Cars: <span id="carsGlorietta2Count">0</span></p>
+        <p>Taxis: <span id="taxisGlorietta2Count">0</span></p>
+        <p>Motorcycles: <span id="motorcyclesGlorietta2Count">0</span></p>
+        <p>Tricycles: <span id="tricyclesGlorietta2Count">0</span></p>
+        <p>UV: <span id="uvGlorietta2Count">0</span></p>
+        <p>Buses: <span id="busesGlorietta2Count">0</span></p>
+        <p>Light Trucks: <span id="lightTrucksGlorietta2Count">0</span></p>
+        <p>Heavy Trucks: <span id="heavyTrucksGlorietta2Count">0</span></p>
+        <button onclick="incrementCount('carsGlorietta2Count')">Add Car</button>
+        <button onclick="incrementCount('taxisGlorietta2Count')">Add Taxi</button>
+        <button onclick="incrementCount('motorcyclesGlorietta2Count')">Add Motorcycle</button>
+        <button onclick="incrementCount('tricyclesGlorietta2Count')">Add Tricycle</button>
+        <button onclick="incrementCount('uvGlorietta2Count')">Add UV</button>
+        <button onclick="incrementCount('busesGlorietta2Count')">Add Bus</button>
+        <button onclick="incrementCount('lightTrucksGlorietta2Count')">Add Light Truck</button>
+        <button onclick="incrementCount('heavyTrucksGlorietta2Count')">Add Heavy Truck</button>
+    </div>
+</div>
+
+<script>
+    function incrementCount(counterId) {
+        var countElement = document.getElementById(counterId);
+        var currentCount = parseInt(countElement.innerText);
+        countElement.innerText = currentCount + 1;
+    }
+</script>
+
+</body>
+</html>
