@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .counter {
+            display: inline-block;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Traffic Counter</h1>
+
+<div class="counter">
+    <h2>Cars</h2>
+    <p id="carCount">0</p>
+    <button onclick="incrementCount('carCount')">Add Car</button>
+</div>
+
+<div class="counter">
+    <h2>Motorcycles</h2>
+    <p id="motorcycleCount">0</p>
+    <button onclick="incrementCount('motorcycleCount')">Add Motorcycle</button>
+</div>
+
+<div class="counter">
+    <h2>Tricycles</h2>
+    <p id="tricycleCount">0</p>
+    <button onclick="incrementCount('tricycleCount')">Add Tricycle</button>
+</div>
+
+<div class="counter">
+    <h2>Jeepneys</h2>
+    <p id="jeepneyCount">0</p>
+    <button onclick="incrementCount('jeepneyCount')">Add Jeepney</button>
+</div>
+
+<div class="counter">
+    <h2>Taxis</h2>
+    <p id="taxiCount">0</p>
+    <button onclick="incrementCount('taxiCount')">Add Taxi</button>
+</div>
+
+<div class="counter">
+    <h2>Utility Vehicles</h2>
+    <p id="utilityVehicleCount">0</p>
+    <button onclick="incrementCount('utilityVehicleCount')">Add Utility Vehicle</button>
+</div>
+
+<div class="counter">
+    <h2>Buses</h2>
+    <p id="busCount">0</p>
+    <button onclick="incrementCount('busCount')">Add Bus</button>
+</div>
+
+<div class="counter">
+    <h2>Light Trucks</h2>
+    <p id="lightTruckCount">0</p>
+    <button onclick="incrementCount('lightTruckCount')">Add Light Truck</button>
+</div>
+
+<div class="counter">
+    <h2>Heavy Trucks</h2>
+    <p id="heavyTruckCount">0</p>
+    <button onclick="incrementCount('heavyTruckCount')">Add Heavy Truck</button>
+</div>
+
+<script>
+    function incrementCount(counterId) {
+        var countElement = document.getElementById(counterId);
+        var currentCount = parseInt(countElement.innerText);
+        countElement.innerText = currentCount + 1;
+    }
+</script>
+
+</body>
+</html>
