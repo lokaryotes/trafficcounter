@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .counter {
+            display: inline-block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Traffic Counter</h1>
+
+<div class="counter">
+    <h2>Cars</h2>
+    <p id="carCount">0</p>
+    <button onclick="incrementCount('carCount')">Add Car</button>
+</div>
+
+<div class="counter">
+    <h2>Motorcycles</h2>
+    <p id="motorcycleCount">0</p>
+    <button onclick="incrementCount('motorcycleCount')">Add Motorcycle</button>
+</div>
+
+<div class="counter">
+    <h2>Tricycles</h2>
+    <p id="tricycleCount">0</p>
+    <button onclick="incrementCount('tricycleCount')">Add Tricycle</button>
+</div>
+
+<script>
+    function incrementCount(counterId) {
+        var countElement = document.getElementById(counterId);
+        var currentCount = parseInt(countElement.innerText);
+        countElement.innerText = currentCount + 1;
+    }
+</script>
+
+</body>
+</html>
