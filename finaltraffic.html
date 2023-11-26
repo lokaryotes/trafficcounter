@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Traffic Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        span {
+            display: inline-block;
+            min-width: 20px;
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button-group button {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Traffic Counter</h1>
+
+<table>
+    <tr>
+        <th>For Rustia Out</th>
+        <th>Bridge to Glorietta 1</th>
+        <th>Bridge to Glorietta 2</th>
+    </tr>
+    <tr>
+        <td>
+            <!-- For Rustia Out -->
+            <h2>For Rustia Out</h2>
+            <div class="button-group">
+                <p>Motorcycles: <button onclick="decrementCount('motorcyclesRustiaOutCount')">-</button><span id="motorcyclesRustiaOutCount">0</span><button onclick="incrementCount('motorcyclesRustiaOutCount')">+</button></p>
+                <p>Tricycles: <button onclick="decrementCount('tricyclesRustiaOutCount')">-</button><span id="tricyclesRustiaOutCount">0</span><button onclick="incrementCount('tricyclesRustiaOutCount')">+</button></p>
+                <p>Cars/UV: <button onclick="decrementCount('carsUVRustiaOutCount')">-</button><span id="carsUVRustiaOutCount">0</span><button onclick="incrementCount('carsUVRustiaOutCount')">+</button></p>
+                <p>Jeepneys: <button onclick="decrementCount('jeepneysRustiaOutCount')">-</button><span id="jeepneysRustiaOutCount">0</span><button onclick="incrementCount('jeepneysRustiaOutCount')">+</button></p>
+                <p>Bus/Light Truck: <button onclick="decrementCount('busLightTruckRustiaOutCount')">-</button><span id="busLightTruckRustiaOutCount">0</span><button onclick="incrementCount('busLightTruckRustiaOutCount')">+</button></p>
+                <p>Heavy Truck: <button onclick="decrementCount('heavyTruckRustiaOutCount')">-</button><span id="heavyTruckRustiaOutCount">0</span><button onclick="incrementCount('heavyTruckRustiaOutCount')">+</button></p>
+            </div>
+        </td>
+        <td>
+            <!-- Bridge to Glorietta 1 -->
+            <h2>Bridge to Glorietta 1</h2>
+            <div class="button-group">
+                <p>Motorcycles: <button onclick="decrementCount('motorcyclesGlorietta1Count')">-</button><span id="motorcyclesGlorietta1Count">0</span><button onclick="incrementCount('motorcyclesGlorietta1Count')">+</button></p>
+                <p>Tricycles: <button onclick="decrementCount('tricyclesGlorietta1Count')">-</button><span id="tricyclesGlorietta1Count">0</span><button onclick="incrementCount('tricyclesGlorietta1Count')">+</button></p>
+                <p>Cars/UV: <button onclick="decrementCount('carsUVGlorietta1Count')">-</button><span id="carsUVGlorietta1Count">0</span><button onclick="incrementCount('carsUVGlorietta1Count')">+</button></p>
+                <p>Jeepneys: <button onclick="decrementCount('jeepneysGlorietta1Count')">-</button><span id="jeepneysGlorietta1Count">0</span><button onclick="incrementCount('jeepneysGlorietta1Count')">+</button></p>
+                <p>Bus/Light Truck: <button onclick="decrementCount('busLightTruckGlorietta1Count')">-</button><span id="busLightTruckGlorietta1Count">0</span><button onclick="incrementCount('busLightTruckGlorietta1Count')">+</button></p>
+                <p>Heavy Truck: <button onclick="decrementCount('heavyTruckGlorietta1Count')">-</button><span id="heavyTruckGlorietta1Count">0</span><button onclick="incrementCount('heavyTruckGlorietta1Count')">+</button></p>
+            </div>
+        </td>
+        <td>
+            <!-- Bridge to Glorietta 2 -->
+            <h2>Bridge to Glorietta 2</h2>
+            <div class="button-group">
+                <p>Motorcycles: <button onclick="decrementCount('motorcyclesGlorietta2Count')">-</button><span id="motorcyclesGlorietta2Count">0</span><button onclick="incrementCount('motorcyclesGlorietta2Count')">+</button></p>
+                <p>Tricycles: <button onclick="decrementCount('tricyclesGlorietta2Count')">-</button><span id="tricyclesGlorietta2Count">0</span><button onclick="incrementCount('tricyclesGlorietta2Count')">+</button></p>
+                <p>Cars/UV: <button onclick="decrementCount('carsUVGlorietta2Count')">-</button><span id="carsUVGlorietta2Count">0</span><button onclick="incrementCount('carsUVGlorietta2Count')">+</button></p>
+                <p>Jeepneys: <button onclick="decrementCount('jeepneysGlorietta2Count')">-</button><span id="jeepneysGlorietta2Count">0</span><button onclick="incrementCount('jeepneysGlorietta2Count')">+</button></p>
+                <p>Bus/Light Truck: <button onclick="decrementCount('busLightTruckGlorietta2Count')">-</button><span id="busLightTruckGlorietta2Count">0</span><button onclick="incrementCount('busLightTruckGlorietta2Count')">+</button></p>
+                <p>Heavy Truck: <button onclick="decrementCount('heavyTruckGlorietta2Count')">-</button><span id="heavyTruckGlorietta2Count">0</span><button onclick="incrementCount('heavyTruckGlorietta2Count')">+</button></p>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function incrementCount(counterId) {
+        var countElement = document.getElementById(counterId);
+        var currentCount = parseInt(countElement.innerText);
+        countElement.innerText = currentCount + 1;
+    }
+
+    function decrementCount(counterId) {
+        var countElement = document.getElementById(counterId);
+        var currentCount = parseInt(countElement.innerText);
+        if (currentCount > 0) {
+            countElement.innerText = currentCount - 1;
+        }
+    }
+</script>
+
+</body>
+</html>
